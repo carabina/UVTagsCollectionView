@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author                = { "Basilic" => "basiliusic@gmail.com" }
   s.ios.deployment_target = '8.0'
   s.source                = { :git => "https://github.com/basiliusic/UVTagsCollectionView.git", :tag => s.version.to_s }
-  s.source_files          = 'Classes/**/*.{h,m}'
+  s.source_files          = 'Classes/**/*.{h,m, xib}'
   s.public_header_files   = 'Classes/**/*.h'
   s.ios.frameworks            = 'UIKit', 'Foundation'
   s.requires_arc          = true
