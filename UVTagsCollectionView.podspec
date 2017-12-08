@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.source                = { :git => "https://github.com/basiliusic/UVTagsCollectionView.git", :tag => s.version.to_s }
   s.source_files          = 'Classes/**/*.{h,m}'
   s.public_header_files   = 'Classes/**/*.h'
-  s.frameworks            = 'Foundation, UIKit'
+  s.ios.frameworks            = 'UIKit', 'Foundation'
   s.requires_arc          = true
 end
