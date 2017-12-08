@@ -101,7 +101,10 @@ static void *CollectionViewContentSizeContext = &CollectionViewContentSizeContex
 }
 
 -(void) _init {
-    [self registerNib:[UINib nibWithNibName: UVTagsCollectionViewCell.nibName bundle: [NSBundle mainBundle]] forCellWithReuseIdentifier: UVTagsCollectionViewCell.reuseIdentifier];
+    NSBundle *podBundle = [NSBundle bundleForClass: UVTagsCollectionViewCell.class];
+    NSURL *bundleUrl = [podBundle URLForResource: @"UVTagsCollectionViewBundle" withExtension: @"bundle"];
+    
+    [self registerNib:[UINib nibWithNibName: UVTagsCollectionViewCell.nibName bundle: [NSBundle bundleWithURL: bundleUrl]] forCellWithReuseIdentifier: UVTagsCollectionViewCell.reuseIdentifier];
     self.dataSource = self;
     self.delegate = self;
     self.collectionViewLayout = [[UVCollectionViewFlowLayout alloc] initWithInterItemSpacing:self.tagsInterItemsSpacing lineSpacing:self.tagsLineSpacing edgeInsets:UIEdgeInsetsMake(self.tagsInsetsTopEdge, self.tagsInsetsLeftEdge, self.tagsInsetsBottomEdge, self.tagsInsetsRightEdge)];
